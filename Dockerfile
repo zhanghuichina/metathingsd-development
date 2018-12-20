@@ -22,7 +22,7 @@ RUN go get github.com/casbin/casbin && \
     go get golang.org/x/sync/errgroup && \
     go get google.golang.org/grpc && \
     go get google.golang.org/grpc/codes && \
-    go get google.golang.org/grpc/credentials && \
+    go get google.golang.org/grpc/credentials
 
 RUN cd /go/src/github.com/satori/go.uuid && \
     git checkout v1.0.0
