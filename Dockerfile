@@ -2,6 +2,13 @@ FROM nayotta/metathings-development
 
 RUN mkdir /etc/metathings
 
+RUN mkdir -p /go/src/github.com/satori && \
+    cd /go/src/github.com/satori && \
+    git clone https://github.com/satori/go.uuid && \
+    cd go.uuid && \
+    git checkout v1.0.0 && \
+    cd /go
+
 RUN go get github.com/casbin/casbin && \
     go get github.com/spf13/cobra && \
     go get github.com/yuin/gopher-lua && \
@@ -15,7 +22,6 @@ RUN go get github.com/casbin/casbin && \
     go get github.com/grpc-ecosystem/go-grpc-middleware/util/metautils && \
     go get github.com/mattn/go-sqlite3 && \
     go get github.com/nayotta/viper && \
-    go get github.com/satori/go.uuid && \
     go get go.uber.org/fx && \
     go get golang.org/x/crypto/bcrypt && \
     go get golang.org/x/crypto/ssh/terminal && \
@@ -24,6 +30,3 @@ RUN go get github.com/casbin/casbin && \
     go get google.golang.org/grpc/codes && \
     go get google.golang.org/grpc/credentials && \
     go get github.com/emitter-io/go
-
-RUN cd /go/src/github.com/satori/go.uuid && \
-    git checkout v1.0.0
