@@ -6,9 +6,8 @@ RUN mkdir -p /go/src/github.com/satori && \
     cd /go/src/github.com/satori && \
     git clone --branch=v1.0.0 --dep=1 https://github.com/satori/go.uuid && \
     go install github.com/satori/go.uuid && \
-    cd /go
-
-RUN go get github.com/casbin/casbin && \
+    cd /go && \
+    go get github.com/casbin/casbin && \
     go get github.com/spf13/cobra && \
     go get github.com/yuin/gopher-lua && \
     go get github.com/lovoo/goka && \
