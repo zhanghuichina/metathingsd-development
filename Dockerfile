@@ -4,9 +4,8 @@ RUN mkdir /etc/metathings
 
 RUN mkdir -p /go/src/github.com/satori && \
     cd /go/src/github.com/satori && \
-    git clone https://github.com/satori/go.uuid && \
-    cd go.uuid && \
-    git checkout v1.0.0 && \
+    git clone --branch=v1.0.0 --dep=1 https://github.com/satori/go.uuid && \
+    go install github.com/satori/go.uuid && \
     cd /go
 
 RUN go get github.com/casbin/casbin && \
