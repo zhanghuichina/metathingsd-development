@@ -31,4 +31,5 @@ RUN go get github.com/casbin/casbin && \
     go get google.golang.org/grpc && \
     go get google.golang.org/grpc/codes && \
     go get google.golang.org/grpc/credentials && \
-    go get github.com/emitter-io/go
+    go get github.com/emitter-io/go && \
+    go get github.com/mongodb/mongo-go-driver
