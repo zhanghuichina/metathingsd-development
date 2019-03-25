@@ -11,12 +11,6 @@ RUN mkdir -p /go/src/github.com/satori && \
     rm -r /go/src/github.com/emitter-io/go/vendor/github.com/satori && \
     cd /go
 
-RUN go get github.com/golang/dep/cmd/dep && \
-    cd /go/src/github.com && \
-    dep init && \
-    cd /go && \
-    dep ensure -add "go.mongodb.org/mongo-driver/mongo@~1.0.0"
-
 RUN go get github.com/casbin/casbin && \
     go get github.com/spf13/cobra && \
     go get github.com/yuin/gopher-lua && \
@@ -38,4 +32,5 @@ RUN go get github.com/casbin/casbin && \
     go get google.golang.org/grpc/codes && \
     go get google.golang.org/grpc/credentials && \
     go get github.com/emitter-io/go && \
+    go get go.mongodb.org/mongo-driver/mongo && \
     go get github.com/mongodb/mongo-go-driver
