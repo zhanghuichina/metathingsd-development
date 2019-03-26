@@ -32,5 +32,11 @@ RUN go get github.com/casbin/casbin && \
     go get google.golang.org/grpc/codes && \
     go get google.golang.org/grpc/credentials && \
     go get github.com/emitter-io/go && \
-    go get go.mongodb.org/mongo-driver/mongo && \
-    go get github.com/mongodb/mongo-go-driver
+    go get github.com/golang/dep/cmd/dep
+
+RUN mkdir -p /go/src/github/mongodb && \
+    cd /go/src/github/mongodb && \
+    git clone --branch=v1.0.0 --dep=1 https://github.com/mongodb/mongo-go-driver && \
+    cd /go/src/github/mongodb/mongo-go-driver && \
+    dep ensure --update && \
+    cd /go
