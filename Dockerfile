@@ -36,7 +36,7 @@ RUN go get github.com/casbin/casbin && \
 
 RUN mkdir -p /go/src/github.com/mongodb && \
     cd /go/src/github.com/mongodb && \
-    git clone --branch=v1.0.0 --dep=1 https://github.com/mongodb/mongo-go-driver && \
+    git clone --branch=v0.2.0 --dep=1 https://github.com/mongodb/mongo-go-driver && \
     cd /go/src/github.com/mongodb/mongo-go-driver && \
     dep ensure --update && \
     cd /go
