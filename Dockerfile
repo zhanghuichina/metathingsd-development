@@ -32,8 +32,8 @@ RUN go get github.com/casbin/casbin && \
     go get google.golang.org/grpc/codes && \
     go get google.golang.org/grpc/credentials && \
     go get github.com/emitter-io/go && \
-    go get github.com/golang/dep/cmd/dep \
-    go get github.com/eclipse/paho.mqtt.golang \
+    go get github.com/golang/dep/cmd/dep && \
+    go get github.com/eclipse/paho.mqtt.golang && \
     go get github.com/gorilla/mux
 
 RUN mkdir -p /go/src/github.com/mongodb && \
