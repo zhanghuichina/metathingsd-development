@@ -2,15 +2,6 @@ FROM nayotta/metathings-development
 
 RUN mkdir /etc/metathings
 
-RUN mkdir -p /go/src/github.com/satori && \
-    cd /go/src/github.com/satori && \
-    git clone --branch=v1.2.0 --dep=1 https://github.com/satori/go.uuid && \
-    mkdir -p /go/src/github.com/emitter-io && \
-    cd /go/src/github.com/emitter-io && \
-    git clone --dep=1 https://github.com/emitter-io/go && \
-    rm -r /go/src/github.com/emitter-io/go/vendor/github.com/satori && \
-    cd /go
-
 RUN go get github.com/casbin/casbin && \
     go get github.com/spf13/cobra && \
     go get github.com/yuin/gopher-lua && \
@@ -31,7 +22,6 @@ RUN go get github.com/casbin/casbin && \
     go get google.golang.org/grpc && \
     go get google.golang.org/grpc/codes && \
     go get google.golang.org/grpc/credentials && \
-    go get github.com/emitter-io/go && \
     go get github.com/golang/dep/cmd/dep && \
     go get github.com/eclipse/paho.mqtt.golang && \
     go get github.com/gorilla/mux
